@@ -4729,7 +4729,7 @@ static VOS_STATUS hdd_parse_ese_beacon_req(tANI_U8 *pValue,
     /*no argument followed by spaces*/
     if ('\0' == *inPtr) return -EINVAL;
 
-    /* Getting the first argument ie Number of IE fields */
+    /*getting the first argument ie Number of IE fields */
     v = sscanf(inPtr, "%31s ", buf);
     if (1 != v) return -EINVAL;
 
@@ -4740,6 +4740,7 @@ static VOS_STATUS hdd_parse_ese_beacon_req(tANI_U8 *pValue,
     pEseBcnReq->numBcnReqIe = tempInt;
 
     hddLog(LOG1, "Number of Bcn Req Ie fields: %d", pEseBcnReq->numBcnReqIe);
+
 
     for (j = 0; j < (pEseBcnReq->numBcnReqIe); j++)
     {
