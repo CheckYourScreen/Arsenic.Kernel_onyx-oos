@@ -37,9 +37,8 @@ echo "                              Compiling Arsenic.Kernel for OldDroid's AOSP
 echo "                    "
 echo -e "**********************************************************************************************"
 make onyx_defconfig
-make -j8
-if ! [ -a $KERN_IMG ];
-then
+make -j16
+if [ ! -e $KERN_IMG ];then
 echo -e "$red Kernel Compilation failed! Fix the errors! $nocol"
 exit 1
 fi
